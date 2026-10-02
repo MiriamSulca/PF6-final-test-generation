@@ -5,7 +5,7 @@ def dish_fetch(num):
     response= requests.get("https://api-colombia.com/api/v1/TypicalDish")
     Typical_Dishes =json.loads(response.content)
     if 1 <= num <= len(Typical_Dishes):
-        return {Typical_Dishes[num - 1]["name"]}
+        return {"name": Typical_Dishes[num - 1]["name"]}
     else:
         return {}
 
